@@ -7,3 +7,4 @@
 
 .python-version
 uv.lock
+.DS_Store
