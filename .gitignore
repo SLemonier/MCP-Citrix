@@ -1,0 +1,9 @@
+# Local config with absolute paths
+.mcp.json
+.claude/
+
+# Secrets
+.env
+
+.python-version
+uv.lock
