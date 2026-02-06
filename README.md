@@ -74,6 +74,16 @@ Add to your MCP configuration:
 claude mcp add citrix -s project -- uv run {yourpathto}/MCP-Citrix/citrix.py
 ```
 
+### with Google Gemini-CLI
+
+Add to your MCP configuration:
+
+```bash
+gemini mcp add citrix uv run /Users/steven.lemonier/Developer/MCP-Citrix/citrix.py
+``
+
+### Then
+
 Then interact naturally:
 - "List all current sessions"
 - "Show me sessions for user john.doe"
