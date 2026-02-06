@@ -80,7 +80,7 @@ Add to your MCP configuration:
 
 ```bash
 gemini mcp add citrix uv run /Users/steven.lemonier/Developer/MCP-Citrix/citrix.py
-``
+```
 
 ### Then
 
