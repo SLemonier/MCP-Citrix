@@ -1,10 +1,11 @@
 # Local config with absolute paths
 .mcp.json
 .claude/
+.ruff_cache/
+.venv/
 
 # Secrets
 .env
 
 .python-version
-uv.lock
 .DS_Store
