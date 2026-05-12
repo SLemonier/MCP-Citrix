@@ -368,7 +368,7 @@ async def citrix_list_advisor() -> dict:
 
 @mcp.tool()
 async def citrix_start_Advisor() -> dict:
-    """ "Start Citrix Advisor."""
+    """ Start Citrix Advisor."""
     headers = await get_headers()
     body = {
         "AspectNameList": [
@@ -387,6 +387,37 @@ async def citrix_start_Advisor() -> dict:
         )
     return resp.json()
 
+@mcp.tool()
+async def citrix_list_image_definitions() -> dict:
+    """List all image definitions."""
+    headers = await get_headers()
+    async with httpx.AsyncClient() as http:
+        resp = await http.get(f"{API}/ImageDefinitions", headers=headers)
+    return resp.json()
+
+@mcp.tool()
+async def citrix_list_image_definition(image_definition_name: str) -> dict:
+    """List a specific image definition by its name."""
+    headers = await get_headers()
+    async with httpx.AsyncClient() as http:
+        resp = http.get(f"{API_BASE}/ImageDefinitions/{image_definition_name}")
+    return resp.json()
+
+@mcp.tool()
+async def citrix_list_image_versions(image_definition_name: str) -> dict:
+    """List all the image versions for a specific image definition."""
+    headers = await get_headers()
+    async with httpx.AsyncClient() as http:
+        resp = http.get(f"{API_BASE}/ImageDefinitions/{image_definition_name}/ImageVersions", headers=headers)
+    return resp.json()
+
+@mcp.tool()
+async def citrix_list_image_version(image_definition_name: str, version_number: str) -> dict:
+    """Show a specific image version for a specific image definition."""
+    headers = get_headers()
+    async with httpx.AsyncClient() as http:
+        resp = http.get(f"{API_BASE}/ImageDefinitions/{image_definition_name}/ImageVersion/{version_number}", headers=headers)
+    return resp.json()
 
 # ── Run ───────────────────────────────────────────────────────────────────────
 
